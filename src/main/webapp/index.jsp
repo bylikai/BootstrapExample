@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="<%=basePath%>/css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="container">
 	<!-- tab表头信息 -->
 	<ul class="nav nav-tabs">
 		<li><a href="#home" data-toggle="tab">首页</a>

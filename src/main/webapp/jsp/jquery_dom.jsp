@@ -1,4 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
+<style>
+	.highlight{ background:#FF3300;}
+</style>
+
 <div class="container">
 	<div>
 		<h1>JQuery DOM TEST</h1>
@@ -9,6 +14,25 @@
 			<li title="pinapple">菠萝</li>
 		</ul>
 		<input type="text" id="address" value="请输入邮箱地址" >
+		
+		<div id="panel">
+			<h2 class="head">什么是JQuery?</h2>
+			<div class="content">
+				Jquery是继prototype之后又一个优秀的Javascrīpt框架。它是轻量级的js库(压缩后只有21k) ，
+				它兼容CSS3，还兼容各种浏览器 （IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+）。
+				jQuery使用户能更方便地处理HTML documents、events、实现动画效果，并且方便地为网站提供AJAX交互。
+				jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择。
+				jQuery能够使用户的html页保持代码和html内容分离，
+				也就是说，不用再在html里面插入一堆js来调用命令了，只需定义id即可。
+			</div>
+		</div>
+		
+		<div id="bubble">
+			外层div元素
+			<span>内层span元素</span>
+			外层div元素
+		</div>
+		<div id="msg"></div>
 	</div>
 	
 		<br />
@@ -58,6 +82,61 @@
 					$(this).val(this.defaultValue); //设置值
 				}
 			});
+			
+			//测试绑定事件
+			$(function(){
+				//测试点击事件
+/* 				$("#panel h2.head").bind("click", function() {
+					var $content = $(this).next();
+					if( $content.is(":visible") ){
+						$content.hide();
+					}
+					else {
+						$content.show();
+					}
+				});	 */
+				
+				//测试鼠标移动事件
+				$("#panel h2.head").bind("mouseover", function() {
+					$(this).addClass("highlight");
+					$(this).next().show();
+				}).bind("mouseout", function(){
+					$(this).removeClass("highlight");
+					$(this).next().hide();
+				});
+				
+				//测试光标悬停事件 hover( enter, leave )
+/* 				$("#panel h2.head").hover( function(){
+					$(this).next().show();
+				}, function(){
+					$(this).next().hide();
+				});
+				 */
+				//测试 toggle
+/* 				$("#panel h2.head").toggle( function(){
+					$(this).next().show();
+				}, function(){
+					$(this).next().hide();
+				}); */
+				
+				//测试SlideUp / Down
+/* 				$("#panel h2.head").toggle(function(){
+					$(this).next().slideUp(3000);
+				}, function(){
+					$(this).next().slideDown(3000);
+				});	 */			
+			});
+			
+			
+/* 			$(function(){
+				// 冒泡事件
+				// 为span元素绑定click事件
+				$("span").bind("click", function(){
+					var txt = $("#msg")+"<p>内层span元素被单击</p>";
+					$("#msg").html(txt);
+					$(this).hide(5000);
+				});
+			}); */
 		</script>
 	</div>
 </div>
