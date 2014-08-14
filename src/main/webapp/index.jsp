@@ -20,25 +20,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body class="container">
 	<!-- tab表头信息 -->
 	<ul class="nav nav-tabs">
-		<li><a href="#home" data-toggle="tab">首页</a>
+		<li class="active"><a href="#home" data-toggle="tab">首页</a>
 		</li>
 		<li><a href="#profile" data-toggle="tab">介绍</a>
 		</li>
 		<li><a href="#messages" data-toggle="tab">消息</a>
 		</li>
-		<li><a href="#settings" data-toggle="tab">设置</a>
+		<li><a href="#jquery_form" data-toggle="tab">表格/表单</a>
 		</li>
-		<li class="active"><a href="#jquery_dom" data-toggle="tab">JQuery DOM</a>
+		<li><a href="#jquery_dom" data-toggle="tab">JQuery DOM</a>
 		</li>
 	</ul>
 
 	<!-- tab内容 -->
 	<div class="tab-content">
-		<div class="tab-pane" id="home"><%@ include file='/jsp/home.jsp'%></div>
+		<div class="tab-pane active" id="home"><%@ include file='/jsp/home.jsp'%></div>
 		<div class="tab-pane" id="profile">2</div>
 		<div class="tab-pane" id="messages">3</div>
-		<div class="tab-pane" id="settings">4</div>
-		<div class="tab-pane active" id="jquery_dom"><%@ include file='/jsp/jquery_dom.jsp'%></div>
+		<div class="tab-pane" id="jquery_form"><%@ include file='/jsp/jquery_form.jsp'%></div>
+		<div class="tab-pane" id="jquery_dom"><%@ include file='/jsp/jquery_dom.jsp'%></div>
 	</div>
 		
 	
